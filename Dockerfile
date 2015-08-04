@@ -1,5 +1,5 @@
 FROM centos:7
-MAINTAINER Akel <akel@maintainer.com>
+MAINTAINER MihHosting <dev@mirhosting.com>
 
 ENV container docker
 
