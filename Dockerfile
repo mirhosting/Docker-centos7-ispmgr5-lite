@@ -1,5 +1,5 @@
 FROM centos:7
-MAINTAINER MihHosting <dev@mirhosting.com>
+MAINTAINER MIRhosting <dev@mirhosting.com>
 
 ENV container docker
 
@@ -28,9 +28,11 @@ RUN yum -y remove fail2ban-server
 
 COPY postinstall.sh /usr/local/src/postinstall.sh
 COPY tuning.sh /usr/local/src/tuning.sh
+COPY activate.sh /root/activate.sh
 
 RUN chmod +x /usr/local/src/postinstall.sh
 RUN chmod +x /usr/local/src/tuning.sh
+RUN chmod +x /root/activate.sh
 
 RUN /usr/local/src/postinstall.sh
 RUN /usr/local/src/tuning.sh
@@ -40,3 +42,4 @@ VOLUME [ "/sys/fs/cgroup" ]
 EXPOSE 21 22 25 53 80 110 143 443 465 1500 3306
 
 CMD ["/usr/sbin/init"]
+CMD ["/root/activate.sh"]
