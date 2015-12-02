@@ -35,8 +35,6 @@ RUN chmod +x /usr/local/src/tuning.sh
 RUN /usr/local/src/postinstall.sh
 RUN /usr/local/src/tuning.sh
 
-VOLUME [ "/sys/fs/cgroup" ]
-
 EXPOSE 21 22 25 53 80 110 143 443 465 1500 3306
 
 CMD ["/usr/sbin/init"]
