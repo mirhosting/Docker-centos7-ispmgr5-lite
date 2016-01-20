@@ -28,13 +28,15 @@ RUN yum -y remove fail2ban-server
 
 COPY postinstall.sh /usr/local/src/postinstall.sh
 COPY tuning.sh /usr/local/src/tuning.sh
+COPY start.sh /root/start.sh
 
 RUN chmod +x /usr/local/src/postinstall.sh
 RUN chmod +x /usr/local/src/tuning.sh
+RUN chmod +x /root/start.sh
 
 RUN /usr/local/src/postinstall.sh
 RUN /usr/local/src/tuning.sh
 
 EXPOSE 21 22 25 53 80 110 143 443 465 1500 3306
 
-CMD ["/usr/sbin/init"]
+ENTRYPOINT /root/start.sh
