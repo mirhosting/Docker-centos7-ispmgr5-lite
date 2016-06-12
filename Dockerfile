@@ -17,7 +17,8 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 RUN yum -y swap -- remove systemd-container systemd-container-libs -- install systemd systemd-libs
 
 RUN yum update -y
-RUN yum install wget openssh-server -y
+RUN yum install openssh-server -y
+RUN yum install wget -y
 
 RUN wget -O /usr/local/src/install.sh http://download.ispsystem.com/install.sh
 RUN chmod +x /usr/local/src/install.sh
