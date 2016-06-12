@@ -1,9 +1,9 @@
 #!/bin/bash
 # ISPmanager 5 Lite Post-Install script.
-# Instalated: LogRotate, MPM-ITK for HTTPD, Nginx, PHP, AwStat, Exim, RoundCube mail, Named, PhpMyAdmin, FTP-server
+# Installing: LogRotate, MPM-ITK for HTTPD, Nginx, PHP, AwStat, Exim, RoundCube mail, Named, PhpMyAdmin, FTP-server
 
 cd /usr/local/mgr5
-echo "Directoru mgr5"
+echo "Directory mgr5"
 
 sbin/pkginstall.sh zip ispmgr feature.check
 echo "zip installed"
@@ -49,7 +49,7 @@ echo "ispmgr.conf changed"
 
 #Delete license-file
 rm -f /usr/local/mgr5/etc/ispmgr.lic
-echo "License-file was been deleted"
+echo "License-file has been deleted"
 
 # Listen all IP's iHttpd
 sed -i -n -e :a -e '1,4!{P;N;D;};N;ba' /usr/local/mgr5/etc/ihttpd.conf
