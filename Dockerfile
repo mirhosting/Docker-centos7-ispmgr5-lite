@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos:7.0.1406
 MAINTAINER MIRhosting <dev@mirhosting.com>
 
 ENV container docker
