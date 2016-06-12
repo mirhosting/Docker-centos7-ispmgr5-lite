@@ -1,4 +1,4 @@
-FROM centos:7.2.1511
+FROM centos:latest
 MAINTAINER MIRhosting <dev@mirhosting.com>
 
 ENV container docker
@@ -16,9 +16,8 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 RUN yum -y swap -- remove systemd-container systemd-container-libs -- install systemd systemd-libs
 
-RUN yum -y update
-RUN yum -y install wget
-RUN yum install -y openssh-server
+RUN yum update -y
+RUN yum install wget openssh-server -y
 
 RUN wget -O /usr/local/src/install.sh http://download.ispsystem.com/install.sh
 RUN chmod +x /usr/local/src/install.sh
