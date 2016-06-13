@@ -22,7 +22,7 @@ RUN yum install -y \
 
 RUN wget -O /usr/local/src/install.sh http://download.ispsystem.com/install.sh
 RUN chmod +x /usr/local/src/install.sh
-RUN [ "/bin/bash", "-c", "/usr/local/src/install.sh", "--osfamily REDHAT --osversion 7 --release stable --silent ISPmanager-Lite" ]
+RUN [ "/bin/bash", "-c", "\"/usr/local/src/install.sh --osfamily REDHAT --osversion 7 --release stable --silent ISPmanager-Lite\"" ]
 
 RUN yum -y remove fail2ban-server
 
