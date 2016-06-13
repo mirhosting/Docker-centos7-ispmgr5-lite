@@ -20,9 +20,9 @@ RUN yum install -y \
   openssh-server \
   wget
 
-COPY install_wrapper.sh /usr/local/src/install_wrapper.sh
-RUN chmod +x /usr/local/src/install_wrapper.sh
-RUN /usr/local/src/install_wrapper.sh
+RUN wget http://download.ispsystem.com/install.sh -O /usr/local/src/install.sh
+RUN chmod +x /usr/local/src/install.sh
+RUN /usr/local/src/install.sh --osfamily REDHAT --osversion 7 --release stable --disable-fail2ban --ignore-hostname --silent ISPmanager-Lite
 
 RUN yum -y remove fail2ban-server
 
