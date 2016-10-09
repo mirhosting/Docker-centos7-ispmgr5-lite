@@ -60,6 +60,9 @@ interactive-timeout
 [client]
 default-character-set=utf8" > /etc/my.cnf
 
+touch /var/log/mysqld.log
+chmod 777 /var/log/mysqld.log
+
 #Tuning default iptables
 cp /etc/sysconfig/iptables /etc/sysconfig/iptables.save
 echo > /etc/sysconfig/iptables
