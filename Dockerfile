@@ -16,6 +16,9 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 RUN yum -y swap -- remove systemd-container systemd-container-libs -- install systemd systemd-libs
 
+RUN touch /var/log/mysqld.log
+RUN chmod 777 /var/log/mysqld.log
+
 RUN yum install -y \
   openssh-server \
   wget
